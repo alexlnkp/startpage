@@ -8,8 +8,8 @@
 const searchInput = document.querySelector("#searchbar > input")
 const searchButton = document.querySelector("#searchbar > button")
 
-const lookup = {"/":"/","deepl":"https://deepl.com/","reddit":"https://reddit.com/","maps":"https://maps.google.com/"}
-const engine = "google"
+const lookup = {}
+const engine = "duckduckgo"
 const engineUrls = {
   deepl: "https://www.deepl.com/translator#-/-/{query}",
   duckduckgo: "https://duckduckgo.com/?q={query}",
@@ -48,7 +48,7 @@ searchButton.onclick = search
  * inject bookmarks into html
  */
 
-const bookmarks = [{"id":"qZJXPHtevc5GeXIY","label":"reddit","bookmarks":[{"id":"vflp8J7K4f7xvBJ7","label":"r/startpages","url":"https://www.reddit.com/r/startpages/"},{"id":"2K75XiVT4TgeYK6d","label":"r/typescript","url":"https://www.reddit.com/r/typescript/"},{"id":"Y31LE7mkfJib3YEU","label":"r/reactjs","url":"https://www.reddit.com/r/reactjs/"}]},{"id":"dZpkK8VgxyMtHF4V","label":"design tools","bookmarks":[{"id":"qK9TUmt5nHZ2yxvX","label":"pixlrx","url":"https://pixlr.com/x/"},{"id":"jMViptaOnEk6NUtX","label":"image enlarger","url":"https://bigjpg.com/en"},{"id":"qBqugWJWFov1FUzL","label":"haikei","url":"https://app.haikei.app/"},{"id":"ug5SeLDKgMaEBAFg","label":"css gradients","url":"https://larsenwork.com/easing-gradients/"}]},{"id":"2UBwFPhRarcFJrCi","label":"worth reading","bookmarks":[{"id":"sPpkMrf4IvPzzs1x","label":"happy hues","url":"https://www.happyhues.co/"},{"id":"WdzlC4MnbKJgDcvG","label":"styled-components","url":"https://www.joshwcomeau.com/react/demystifying-styled-components/"},{"id":"1Ao1Crcc6Aibegb0","label":"react docs","url":"https://reactjs.org/docs/getting-started.html"}]},{"id":"PL0CUNQAggdLdqQ9","label":"sources","bookmarks":[{"id":"87zmi9VqEobuU1Qr","label":"icons","url":"https://feathericons.com/"},{"id":"lc5Yahe1H9lz0Ft5","label":"gif","url":"https://designyoutrust.com/2019/05/the-chill-and-retro-motion-pixel-art-of-motocross-saito/"},{"id":"4yVbafNyDVi8gqxB","label":"@startpage","url":"https://prettycoffee.github.io/startpage"},{"id":"4zkN2Z31czVpbV3H","label":"author","url":"https://prettycoffee.github.io/"}]}]
+const bookmarks = [{"id":"dZpkK8VgxyMtHF4V","label":"usual","bookmarks":[{"id":"qK9TUmt5nHZ2yxvX","label":"github","url":"https://github.com"},{"id":"jMViptaOnEk6NUtX","label":"yt","url":"https://youtube.com"}]},{"id":"PL0CUNQAggdLdqQ9","label":"sources","bookmarks":[{"id":"OR7sAxmvnXl4U76D","label":"arch","url":"archlinux.org"},{"id":"CerJorUjr8F3uAXW","label":"aur","url":"https://aur.archlinux.org/"},{"id":"q09uZ6MaPMDqI8J6","label":"pkg","url":"https://archlinux.org/packages/"}]},{"id":"T97yo8gspA75utT4","label":"misc","bookmarks":[{"id":"DfUo6ETzAk7Wzbtf","label":"spider","url":"https://spider-solitaire.app"},{"id":"yUGWys1t8iXSKyY4","label":"songsterr","url":"https://songsterr.com"},{"id":"SqCIV8RlSlrjyae0","label":"nf-cheatsheet","url":"https://www.nerdfonts.com/cheat-sheet"},{"id":"UObaqXcgfdAXgShL","label":"catppuccin","url":"https://catppuccin.com/palette"}]}]
 
 const createGroupContainer = () => {
   const container = document.createElement("div")
