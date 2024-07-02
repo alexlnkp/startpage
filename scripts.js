@@ -1,23 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 
-/**
- * Search function
- */
-
-const searchInput = document.querySelector("#searchbar > input")
-const searchButton = document.querySelector("#searchbar > button")
-
 const lookup = {}
-const engine = "https://search.brave.com/search?q={query}"
-const engineUrls = {
-  deepl: "https://www.deepl.com/translator#-/-/{query}",
-  duckduckgo: "https://duckduckgo.com/?q={query}",
-  ecosia: "https://www.ecosia.org/search?q={query}",
-  google: "https://www.google.com/search?q={query}",
-  startpage: "https://www.startpage.com/search?q={query}",
-  youtube: "https://www.youtube.com/results?q={query}",
-}
 
 const isWebUrl = value => {
   try {
@@ -34,15 +18,6 @@ const getTargetUrl = value => {
   const url = engineUrls[engine] ?? engine
   return url.replace("{query}", value)
 }
-
-const search = () => {
-  const value = searchInput.value
-  const targetUrl = getTargetUrl(value)
-  window.open(targetUrl, "_self")
-}
-
-searchInput.onkeyup = event => event.key === "Enter" && search()
-searchButton.onclick = search
 
 /**
  * inject bookmarks into html
